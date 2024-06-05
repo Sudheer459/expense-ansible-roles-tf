@@ -1,8 +1,8 @@
-- name: "configure {{ component }} server"
+- name: configure "{{component}}" server using roles
   hosts: all
   connection: local
-  vars_file:
-  - "variables-{{ env }}.yaml"
   become: yes
+  vars_files:
+  - "variables-{{env}}.yaml"
   roles:
-  - "{{ component }}"
+  - "{{component}}"
